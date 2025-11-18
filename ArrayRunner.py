@@ -137,10 +137,6 @@ def get_playlist_by_name(name):
     if name_lower in playlist_mapping:
         return playlist_mapping[name_lower]
 
-# Use link below and run agaist git clone to get G-stream playlist
-# Then add back to playlist mapping dict
-# https://github.com/BuddyChewChew/app-m3u-generator/tree/main/playlists
-
 
 if __name__ == "__main__":
     playlist_names()
