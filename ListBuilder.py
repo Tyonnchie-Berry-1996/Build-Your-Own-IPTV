@@ -363,11 +363,11 @@ def filter_channels():
 
     while True:
         # Step 1: Open the file
-        with open('/home/ty/Desktop/playlist-maker/parsed_us-channels.txt', 'r') as file:
+        with open('/home/src/Build-Your-Own-IPTV/parsed_us-channels.txt', 'r') as file:
             # Step 2: Read the file line by line
             lines = file.readlines()
 
-        which_playlist = "/home/ty/Desktop/playlist-maker/which_playlist.txt"
+        which_playlist = "/home/src/Build-Your-Own-IPTV/which_playlist.txt"
 
         if not os.path.exists(which_playlist):
             selection_of_playlist = playlist_selection()
@@ -400,7 +400,7 @@ def filter_channels():
                 os.system(f'echo {selection_of_playlist} > {which_playlist}')
                 parsed_data = m3u_parser(selection_of_playlist)
 
-                clear_results_file = '/home/ty/Desktop/playlist-maker/search_results.txt'
+                clear_results_file = '/home/src/Build-Your-Own-IPTV/search_results.txt'
                 with open(clear_results_file, 'w') as file:
                     file.write("")
 
