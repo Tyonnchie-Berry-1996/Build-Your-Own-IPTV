@@ -56,7 +56,7 @@ def get_playlist_by_name(name):
 def m3u_parser(chosen_playlist=""):
 
     # Continue with the rest of the function after valid selection
-    with open(f'/home/ty/Desktop/playlist-maker/Playlist/{chosen_playlist}', 'r') as file:
+    with open(f'/home/src/Build-Your-Own-IPTV/{chosen_playlist}', 'r') as file:
         # Step 2: Read the file line by line
         lines = file.readlines()
     # print(file.name)
@@ -410,7 +410,7 @@ def filter_channels():
         if search_type in ["country", "countries"]:
             print("\nSwitching Query Mode to Region/Country\n")
 
-            change_static_playlist = '/home/ty/Desktop/playlist-maker/which_playlist.txt'
+            change_static_playlist = '/home/src/Build-Your-Own-IPTV/which_playlist.txt'
             with open(change_static_playlist, 'w') as file:
                 file.write("playlist.m3u")
             get_country_code()
@@ -480,7 +480,7 @@ def filter_channels():
 def reset_playlist():
     """Call this function when executing ListBuilder.py"""
 
-    playlist_path = "/home/ty/Desktop/playlist-maker/which_playlist.txt"
+    playlist_path = "/home/src/Build-Your-Own-IPTV/which_playlist.txt"
 
     # Remove the existing playlist file if it exists
     if os.path.exists(playlist_path):
