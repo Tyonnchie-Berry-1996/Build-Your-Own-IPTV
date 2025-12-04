@@ -7,6 +7,14 @@ def create_custom_playlist(import_channel, selected_channels=""):
     Read search_results.txt and create a custom M3U playlist
     from matching channels in the source playlist
     """
+    directory = subprocess.run(
+    ['bash', '-c', 'echo $HOME'],
+    capture_output=True,
+    text=True
+    )
+
+    home_base = directory.stdout.strip()
+    
     which_playlist = "/home/ty/Desktop/playlist-maker/which_playlist.txt"
 
     with open(which_playlist, 'r') as file:
@@ -147,7 +155,14 @@ def create_custom_playlist(import_channel, selected_channels=""):
 
 
 def reset_playlist():
-    """Call this function when you exit IPTVGuide.py"""
+    
+    directory = subprocess.run(
+    ['bash', '-c', 'echo $HOME'],
+    capture_output=True,
+    text=True
+    )
+
+    home_base = directory.stdout.strip()    
 
     output_playlist = "/home/ty/Desktop/custom-playlist/custom_playlist.m3u"
 
