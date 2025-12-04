@@ -3,6 +3,8 @@
 An IPTV playlist builder that works like a modular conveyor belt. Start by selecting a source playlist, then search channels or groups in batches. After every 5 searches, a GUI pops up so you can precisely choose what to import.
 The tool outputs a clean, custom M3U using regex matching and sed, while preserving the integrity of your original files.
 
+By default the module expects your files live at $HOME/src
+
 1. ***Setup for fedora***
 
    ```bash
@@ -11,7 +13,7 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
 2. ***Clone the repo***
 
    ```bash
-   cd /home/$USER/src
+   cd $HOME/src
    git clone https://github.com/Tyonnchie-Berry-1996/Build-Your-Own-IPTV.git
    cd Build-Your-Own-IPTV
    ```
@@ -54,3 +56,17 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
     pip install -r requirements.txt
    ```
 
+You have to run <code>PlaylistRunner.py</code> to build the playlist you can use later on when you run <code>ListBuilder.py</code>. 
+
+6. ***Build a playlist***
+
+   ```bash
+    python3 PlaylistRunner.py
+   ```
+   
+7. ***Search and Customize your playlist***
+
+   ```bash
+    python3 ListBuilder.py
+   ``` 
+Now you have a customized m3u playlist ready to pull streams for IPTV. Don't believe me run this command <code> cat custom_playlist.m3u</code>
