@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 playlist = [
     "https://www.apsattv.com/localnow.m3u",
     "https://www.apsattv.com/redbox.m3u",
