@@ -23,7 +23,7 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
    pip install pipreqs
    pipreqs .
    ```
-   >>Or try this
+   >Or try this
    
    ```bash
    python3 -m pip install --upgrade pip
