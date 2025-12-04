@@ -3,6 +3,7 @@ import re
 import requests
 from pycountry import countries
 import CreateCustomPlaylist
+import subprocess
 
 
 def playlist_names():
@@ -54,7 +55,17 @@ def get_playlist_by_name(name):
 
 
 def m3u_parser(chosen_playlist=""):
+    
+    directory = subprocess.run(
+    ['bash', '-c', 'echo $HOME'],
+    capture_output=True,
+    text=True
+    )
 
+    home_base = directory.stdout.strip()
+    
+    print(home_base)
+    
     # Continue with the rest of the function after valid selection
     with open(f'/home/$USER/src/Build-Your-Own-IPTV/{chosen_playlist}', 'r') as file:
         # Step 2: Read the file line by line
