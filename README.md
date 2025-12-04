@@ -71,6 +71,12 @@ You have to run <code>PlaylistRunner.py</code> to build a playlist for  <code>Li
     ``` 
 Now you have a customized m3u playlist ready to pull streams for IPTV. Don't believe me run this command <code> cat custom_playlist.m3u</code>
 
+8. ***Get rid of your venv when ready***
+
+    ```bash
+     deactivate
+    ``` 
+
 How do I use this?
  ---
    <p>There are some quick plug and play methods for a m3u file but I recommend using <code>Jellyfin</code> and <code>NextPVR</code> that's just my preference. I will add a video tutorial/visual demo with these steps and an explaination on how I use this in my daily life; I will also explain how you can use the m3u file with other apps outside of jellyfin.</p>
