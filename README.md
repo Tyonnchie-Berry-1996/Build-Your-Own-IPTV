@@ -56,17 +56,17 @@ By default the module expects your files live at $HOME/src
     pip install -r requirements.txt
    ```
 
-You have to run <code>PlaylistRunner.py</code> to build the playlist you can use later on when you run <code>ListBuilder.py</code>. 
+You have to run <code>PlaylistRunner.py</code> to build a playlist for  <code>ListBuilder.py</code> to use. 
 
-6. ***Build a playlist***
+ 6. ***Build a playlist***
 
-   ```bash
-    python3 PlaylistRunner.py
-   ```
+    ```bash
+     python3 PlaylistRunner.py
+    ```
    
 7. ***Search and Customize your playlist***
 
-   ```bash
-    python3 ListBuilder.py
-   ``` 
+    ```bash
+     python3 ListBuilder.py
+    ``` 
 Now you have a customized m3u playlist ready to pull streams for IPTV. Don't believe me run this command <code> cat custom_playlist.m3u</code>
