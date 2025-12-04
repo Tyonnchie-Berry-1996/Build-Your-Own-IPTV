@@ -66,7 +66,7 @@ def m3u_parser(chosen_playlist=""):
     
     
     # Continue with the rest of the function after valid selection
-    with open(f'{home_base}/src/Build-Your-Own-IPTV/{chosen_playlist}', 'r') as file:
+    with open(f'{directory}/src/Build-Your-Own-IPTV/{chosen_playlist}', 'r') as file:
         # Step 2: Read the file line by line
         lines = file.readlines()
     # print(file.name)
