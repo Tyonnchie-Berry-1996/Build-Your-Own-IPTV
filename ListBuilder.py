@@ -66,7 +66,7 @@ def m3u_parser(chosen_playlist=""):
     
     
     # Continue with the rest of the function after valid selection
-    with open('/home/tyberry/src/Build-Your-Own-IPTV/{chosen_playlist}', 'r') as file:
+    with open(f'/home/tyberry/src/Build-Your-Own-IPTV/{chosen_playlist}', 'r') as file:
         # Step 2: Read the file line by line
         lines = file.readlines()
     # print(file.name)
@@ -373,7 +373,7 @@ def filter_channels():
 
     while True:
         # Step 1: Open the file
-        with open('/home/tyberry/src/Build-Your-Own-IPTV/parsed_us-channels.txt', 'r') as file:
+        with open(f'/home/tyberry/src/Build-Your-Own-IPTV/parsed_us-channels.txt', 'r') as file:
             # Step 2: Read the file line by line
             lines = file.readlines()
 
@@ -410,7 +410,7 @@ def filter_channels():
                 os.system(f'echo {selection_of_playlist} > {which_playlist}')
                 parsed_data = m3u_parser(selection_of_playlist)
 
-                clear_results_file = '/home/tyberry/src/Build-Your-Own-IPTV/search_results.txt'
+                clear_results_file = f'/home/tyberry/src/Build-Your-Own-IPTV/search_results.txt'
                 with open(clear_results_file, 'w') as file:
                     file.write("")
 
@@ -420,7 +420,7 @@ def filter_channels():
         if search_type in ["country", "countries"]:
             print("\nSwitching Query Mode to Region/Country\n")
 
-            change_static_playlist = '/home/tyberry/src/Build-Your-Own-IPTV/which_playlist.txt'
+            change_static_playlist = f'/home/tyberry/src/Build-Your-Own-IPTV/which_playlist.txt'
             with open(change_static_playlist, 'w') as file:
                 file.write("playlist.m3u")
             get_country_code()
