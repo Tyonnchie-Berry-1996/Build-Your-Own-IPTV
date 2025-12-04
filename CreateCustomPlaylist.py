@@ -15,16 +15,16 @@ def create_custom_playlist(import_channel, selected_channels=""):
 
     home_base = directory.stdout.strip()
     
-    which_playlist = "/home/ty/Desktop/playlist-maker/which_playlist.txt"
+    which_playlist = f'{home_base}/src/Build-Your-Own-IPTV/which_playlist.txt"
 
     with open(which_playlist, 'r') as file:
         static_playlist = file.read().strip()
-        source_playlist = f"/home/ty/Desktop/playlist-maker/Playlist/{static_playlist}"
+        source_playlist = f"{home_base}/src/Build-Your-Own-IPTV/{static_playlist}"
         parsed_data = ListBuilder.m3u_parser(static_playlist)
 
     # File paths
-    search_results_file = "/home/ty/Desktop/playlist-maker/search_results.txt"
-    output_playlist = "/home/ty/Desktop/custom-playlist/custom_playlist.m3u"
+    search_results_file = f"{home_base}/src/Build-Your-Own-IPTV/search_results.txt"
+    output_playlist = f"{home_base}/src/Build-Your-Own-IPTV/custom_playlist.m3u"
 
     # Check if files exist
     if not os.path.exists(search_results_file):
@@ -164,7 +164,7 @@ def reset_playlist():
 
     home_base = directory.stdout.strip()    
 
-    output_playlist = "/home/ty/Desktop/custom-playlist/custom_playlist.m3u"
+    output_playlist = f"{home_base}/src/Build-Your-Own-IPTVcustom-playlist/custom_playlist.m3u"
 
     # Remove the existing playlist file if it exists
     if os.path.exists(output_playlist):
