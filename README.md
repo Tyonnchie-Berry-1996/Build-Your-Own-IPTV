@@ -22,7 +22,7 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
    pip install pipreqs
    pipreqs .
    ```
-   >    >OR try this
+   >Or try this
    
    ```bash
    python3 -m pip install pipreqs
@@ -47,7 +47,7 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
     python3 -m pip install --upgrade pip
     python3 -m pip install -r requirements.txt
    ```
-   >    >OR try this
+   >Or try this
 
    ```bash
     pip install --upgrade pip
