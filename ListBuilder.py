@@ -381,11 +381,11 @@ def filter_channels():
 
     while True:
         # Step 1: Open the file
-        with open(f'{home_base}/tyberry/src/Build-Your-Own-IPTV/parsed_us-channels.txt', 'r') as file:
+        with open(f'{home_base}/src/Build-Your-Own-IPTV/parsed_us-channels.txt', 'r') as file:
             # Step 2: Read the file line by line
             lines = file.readlines()
 
-        which_playlist = f"{home_base}/tyberry/src/Build-Your-Own-IPTV/which_playlist.txt"
+        which_playlist = f"{home_base}/src/Build-Your-Own-IPTV/which_playlist.txt"
 
         if not os.path.exists(which_playlist):
             selection_of_playlist = playlist_selection()
@@ -418,7 +418,7 @@ def filter_channels():
                 os.system(f'echo {selection_of_playlist} > {which_playlist}')
                 parsed_data = m3u_parser(selection_of_playlist)
 
-                clear_results_file = f'{home_base}/tyberry/src/Build-Your-Own-IPTV/search_results.txt'
+                clear_results_file = f'{home_base}/src/Build-Your-Own-IPTV/search_results.txt'
                 with open(clear_results_file, 'w') as file:
                     file.write("")
 
@@ -428,7 +428,7 @@ def filter_channels():
         if search_type in ["country", "countries"]:
             print("\nSwitching Query Mode to Region/Country\n")
 
-            change_static_playlist = f'{home_base}/tyberry/src/Build-Your-Own-IPTV/which_playlist.txt'
+            change_static_playlist = f'{home_base}/src/Build-Your-Own-IPTV/which_playlist.txt'
             with open(change_static_playlist, 'w') as file:
                 file.write("playlist.m3u")
             get_country_code()
@@ -506,7 +506,7 @@ def reset_playlist():
 
     home_base = directory.stdout.strip()
 
-    playlist_path = f"{home_base}/tyberry/src/Build-Your-Own-IPTV/which_playlist.txt"
+    playlist_path = f"{home_base}/src/Build-Your-Own-IPTV/which_playlist.txt"
 
     # Remove the existing playlist file if it exists
     if os.path.exists(playlist_path):
