@@ -370,6 +370,14 @@ def filter_channels():
 
     search_counter = 0
     playlist_switched = False
+    
+    directory = subprocess.run(
+    ['bash', '-c', 'echo $HOME'],
+    capture_output=True,
+    text=True
+    )
+
+    home_base = directory.stdout.strip()    
 
     while True:
         # Step 1: Open the file
