@@ -39,7 +39,7 @@ def get_playlist_info():
 
                                 # Create filename from URL or use a default name
                                 new_name = matched_name.replace(' ', '-')
-                                filename = f"/home/src/Build-Your-Own-IPTV/{new_name}.m3u"
+                                filename = f"/home/$USER/src/Build-Your-Own-IPTV/{new_name}.m3u"
                                 response = requests.get(playlist_url)
 
                                 # Check/Verify URL
