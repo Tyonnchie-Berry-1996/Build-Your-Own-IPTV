@@ -490,6 +490,14 @@ def filter_channels():
 def reset_playlist():
     """Call this function when executing ListBuilder.py"""
 
+    directory = subprocess.run(
+    ['bash', '-c', 'echo $HOME'],
+    capture_output=True,
+    text=True
+    )
+
+    home_base = directory.stdout.strip()
+
     playlist_path = f"{home_base}/tyberry/src/Build-Your-Own-IPTV/which_playlist.txt"
 
     # Remove the existing playlist file if it exists
