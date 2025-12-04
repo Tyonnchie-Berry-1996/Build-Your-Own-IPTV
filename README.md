@@ -19,14 +19,12 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
 3. ***Auto-generate a requirements file***
 
    ```bash
-   pip install --upgrade pip
    pip install pipreqs
    pipreqs .
    ```
    >Or try this
    
    ```bash
-   python3 -m pip install --upgrade pip
    python3 -m pip install pipreqs
    pipreqs .
    ```
