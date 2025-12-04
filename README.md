@@ -23,6 +23,13 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
    pip install pipreqs
    pipreqs .
    ```
+   >>Or try this
+   
+   ```bash
+   python3 -m pip install --upgrade pip
+   python3 -m pip install pipreqs
+   pipreqs .
+   ```
    >Check what deps you need
 
    ```bash
@@ -34,5 +41,18 @@ The tool outputs a clean, custom M3U using regex matching and sed, while preserv
    ```bash
    python3 -m venv IPBOX
    source IPBOX/bin/activate
+   ```
+
+5. ***Upgrade pip and install the requirements file***
+
+   ```bash
+    python3 -m pip install --upgrade pip
+    python3 -m pip install -r requirements.txt
+   ```
+   >Or try this
+
+   ```bash
+    pip install --upgrade pip
+    pip install -r requirements.txt
    ```
 
