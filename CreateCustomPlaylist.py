@@ -15,7 +15,7 @@ def create_custom_playlist(import_channel, selected_channels=""):
 
     home_base = directory.stdout.strip()
     
-    which_playlist = f'{home_base}/src/Build-Your-Own-IPTV/which_playlist.txt"
+    which_playlist = f"{home_base}/src/Build-Your-Own-IPTV/which_playlist.txt"
 
     with open(which_playlist, 'r') as file:
         static_playlist = file.read().strip()
@@ -47,7 +47,6 @@ def create_custom_playlist(import_channel, selected_channels=""):
                 target_channels.append(channel_name.lower())
 
     print(f"Found {len(target_channels)} channels to search for")
-    # print(target_channels)
     file.close()
 
     # Step 3: Find exact matches
@@ -65,25 +64,15 @@ def create_custom_playlist(import_channel, selected_channels=""):
                 'channel':  item['channel_name']
             })
             exact_matches.append(channel_name)
-            # print(f"EXACT MATCH: {item['channel_name']}")
 
     print(f"\nFound {len(matches)} exact matching channels")
-    # print(matches[1]['channel'])
-    # print(f"Exact matches: {exact_matches}")
-
-    # Show which channels from search_results weren't found
-    # not_found = [ch for ch in target_channels if ch not in exact_matches]
-    # if not_found:
-    #     print(f"\nChannels not found in playlist: {not_found}")
 
     is_selected_mode = True if selected_channels == "selected_channels" else False
 
     # Step 3: Create custom playlist using sed to preserve original formatting
     if is_selected_mode:
-        # print("Creating custom playlist....")
-
+        
         # Create the playlist header
-        # os.system(f'echo "#EXTM3U" > {output_playlist}')
 
         if not os.path.exists(output_playlist):
             os.system(f'echo "#EXTM3U" > {output_playlist}')
@@ -129,12 +118,10 @@ def create_custom_playlist(import_channel, selected_channels=""):
         for i in range(len(matches)):
             matched = matches[i]["channel"]
             name_channel = matched
-            #
-            # print(name_channel)
+
 
             grep_cmd = f'grep -nF ",{name_channel}" "{source_playlist}"'
             result = os.popen(grep_cmd).read().strip()
-            # print(result)
 
             if result:
                 # Split multiple results and take only the first one (in case of duplicates)
@@ -144,10 +131,7 @@ def create_custom_playlist(import_channel, selected_channels=""):
                 # Extract line number (first part before the colon)
                 line_num = int(first_match.split(':')[0])
 
-                # print(f"Added: {name_channel} (EXTINF line {line_num} + URL line {line_num + 1})")
-
                 sed_cmd = f'sed -n "{line_num},{line_num + 1}p" "{source_playlist}" >> {output_playlist}'
-                # sed_cmd = f'sed -n "{line_num},{line_num + 1}p" "{source_playlist}"'
                 os.system(sed_cmd)
 
             else:
@@ -173,8 +157,6 @@ def reset_playlist():
             # print(f"\nRemoved existing playlist")
         except OSError as e:
             print(f"No file to remove: {e}")
-
-    # print("\nPlaylist reset")
 
 
 if __name__ == "__main__":
