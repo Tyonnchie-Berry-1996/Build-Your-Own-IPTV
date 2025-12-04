@@ -69,7 +69,7 @@ You have to run <code>PlaylistRunner.py</code> to build a playlist for  <code>Li
     ```bash
      python3 ListBuilder.py
     ``` 
-Now you have a customized m3u playlist ready to pull streams for IPTV. Don't believe me run this command <code> cat custom_playlist.m3u</code>
+    >Now you have a customized m3u playlist ready to pull streams for IPTV. Don't believe me copy and paste this command <code> cat custom_playlist.m3u</code>
 
 8. ***When ready deactivate your venv***
 
